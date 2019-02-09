@@ -56,12 +56,27 @@ controller.edit  = (req, res) => {
 
 controller.update = (req, res) => {
     const { id }= req.params;
+    user.update(
+        { name: req.body.name, address : req.body.address, phone :req.body.phone },
+        { where: { id: [id] } }
+      )
+        .then(result =>
+            res.redirect('/'),
+            console.log("user updated successfully!")
+            
+        )
+        .catch(err =>
+            console.log("Project update failed !")
+        )
+
+    /*
+    const { id }= req.params;
     const newCustomer = req.body;
     req.getConnection((err, conn) => {
         conn.query('UPDATE customers set ? WHERE id = ?', [newCustomer,id], (err, rows) => {
             res.redirect('/');
         });
-    })
+    })*/
 
 
 
