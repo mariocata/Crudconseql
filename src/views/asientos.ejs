@@ -1,0 +1,77 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del asiento</th>
+            <th>tipo de asiento</th>
+            <th>opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idasiento %>
+                    </td>
+                    <td> <%= data[i].tipo_de_asiento %></td>
+                    <td>
+                        <a href="/asientosdelete/<%= data[i].idasiento %>" class="btn btn-danger">Delete</a>
+                        <a href="/asientosupdate/<%= data[i].idasiento %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/asientosadd" method="post">
+                  
+                   <div class="form-group">
+                           <input type="text" name="tipo_de_asiento" placeholder="tipo de asiento" class="form-control" required>
+           
+                       </div>
+                      
+       
+                           <button type="submit" class="btn btn-primary">Agregar tipo de asiento </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

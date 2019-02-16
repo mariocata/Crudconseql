@@ -3,7 +3,7 @@ const router = express.Router();
 
 const customerController = require('../controllers/customerController');
 const comprasController = require('../controllers/comprasController');
-
+const asientosController = require('../controllers/asientosController');
 
 
 router.get('/', customerController.list);
@@ -18,6 +18,11 @@ router.get('/comprasupdate/:idcompra', comprasController.edit);
 router.post('/comprasupdate/:idcompra', comprasController.update);
 router.get('/comprasdelete/:idcompra', comprasController.delete);
 
+router.get('/asientos',asientosController.list);
+router.post('/asientosadd',asientosController.save);
+router.get('/asientosdelete/:idasiento', asientosController.delete);
+router.get('/asientosupdate/:idasiento',asientosController.edit);
+router.post('/asientosupdate/:idasiento', asientosController.update);
 
 
 module.exports = router;

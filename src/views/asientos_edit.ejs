@@ -1,0 +1,25 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/asientosupdate/<%= data.idasiento %>" method="post">
+                        <div class="form-group">
+                            <input type="text" name="tipo_de_asiento" placeholder="tipo de asiento" class="form-control" required>
+            
+                        </div>
+                        
+            
+                                <button type="submit" class="btn btn-primary">editar asiento </button>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/_footer %>
