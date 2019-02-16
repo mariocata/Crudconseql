@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-module.exports  = new Sequelize('crudnodejsmysql', 'root', 'password123', {
+module.exports  = new Sequelize('guacamayaadm', 'root', 'password123', {
   host: 'localhost',
   dialect: 'mysql',
   operatorsAliases: false,

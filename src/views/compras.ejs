@@ -1,0 +1,93 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id de  la compra</th>
+            <th>id del pasaje</th>
+            <th>id del cliente</th>
+            <th>cantidad de equipaje</th>
+            <th>id del asiento</th>
+            <th>opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idcompra %>
+                    </td>
+                    <td> <%= data[i].idpasaje %></td>
+                    <td> <%= data[i].idpersona %></td>
+                    <td> <%= data[i].cantidad_de_equipaje %></td>
+                    <td> <%= data[i].idasiento %></td>
+                    <td>
+                        <a href="/comprasdelete/<%= data[i].idcompra %>" class="btn btn-danger">Delete</a>
+                        <a href="/comprasupdate/<%= data[i].idcompra %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/comprasadd" method="post">
+                   <div class="form-group">
+                       <input type="number" name="idpasaje" placeholder="id de pasaje" class="form-control" required>
+       
+                   </div>
+                   <div class="form-group">
+                           <input type="number" name="idpersona" placeholder="id de persona" class="form-control" required>
+           
+                       </div>
+                       <div class="form-group">
+                               <input type="number" name="cantidad_de_equipaje" placeholder="cantidad de equipaje" class="form-control" required>
+               
+                           </div>
+                           <div class="form-group">
+                            <input type="number" name="idasiento" placeholder="id del asiento" class="form-control" required>
+            
+                        </div>
+       
+                           <button type="submit" class="btn btn-primary">Agregar Compra </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

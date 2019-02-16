@@ -4,19 +4,10 @@ const datab = require('../database/database');
 
 
 controller.list = (req, res) => {
-    req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM customers', (err, customers) => {
-                if(err){
-                    res.json(err);
-                }
-               
-                res.render('customers', {
-                    data: customers
-                });
-        });
-    });
+                res.render('customers')
+        
 };
-
+/*
 controller.save = (req, res) => {
     const data = req.body;
     
@@ -38,7 +29,7 @@ controller.save = (req, res) => {
             console.log(customer);
             res.redirect('/');
         });
-    })*/
+    })
     
 };
 
@@ -76,7 +67,7 @@ controller.update = (req, res) => {
         conn.query('UPDATE customers set ? WHERE id = ?', [newCustomer,id], (err, rows) => {
             res.redirect('/');
         });
-    })*/
+    })
 
 
 
@@ -94,7 +85,7 @@ controller.delete = (req, res) => {
         });
     })
 };
-
+*/
 
 
 module.exports = controller;
