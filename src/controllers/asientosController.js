@@ -23,7 +23,7 @@ controller.save = (req, res) => {
     let { tipo_de_asiento } = data;
 
 
-    compra.create({
+    asiento.create({
         tipo_de_asiento
     })
     .then(asientos => res.redirect('/asientos'))
@@ -36,7 +36,7 @@ controller.delete = (req, res) => {
     const { idasiento }= req.params;
 
     req.getConnection((err, conn) => {
-        conn.query('DELETE FROM asientos WHERE idasientos = ?',[idasiento], (err,rows) => {
+        conn.query('DELETE FROM asientos WHERE idasiento = ?',[idasiento], (err,rows) => {
             res.redirect('/asientos');
         });
     })

@@ -1,0 +1,39 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/vuelosupdate/<%= data.idvuelo %>" method="post">
+                      
+                        <div class="form-group">
+                                <input type="number" name="idruta" placeholder="id de ruta" class="form-control" required>
+                
+                            </div>
+                            <div class="form-group">
+                                    <input type="number" name="idavion" placeholder="id de avion" class="form-control" required>
+                    
+                                </div>
+                               
+
+                                <div class="form-group">
+                                 <input type="date" name="fecha" placeholder="fecha" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="idruta_desvio" placeholder="ruta en caso de desvio" class="form-control" >
+                 
+                             </div>
+            
+                                <button type="submit" class="btn btn-primary">editar vuelo </button>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/_footer %>

@@ -1,0 +1,89 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del vuelo</th>
+            <th>id del asiento</th>
+            <th>Precio</th>
+            <th>Opciones</th>
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idvuelo %>
+                    </td>
+                    <td> <%= data[i].idasiento %></td>
+                    <td> <%= data[i].precio %></td>
+                  
+                    
+                    <td>
+                        <a href="/preciosdelete/<%= data[i].idvuelo %>/<%= data[i].idasiento %>" class="btn btn-danger">Delete</a>
+                        <a href="/preciosupdate/<%= data[i].idvuelo %>/<%= data[i].idasiento %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/preciosadd" method="post">
+
+                <div class="form-group">
+                    <input type="number" name="idvuelo" placeholder="id del vuelo" class="form-control" required>
+    
+                </div>
+
+                   <div class="form-group">
+                       <input type="number" name="idasiento" placeholder="id del asiento" class="form-control" required>
+       
+                   </div>
+                   <div class="form-group">
+                    <input type="number" name="precio" placeholder="Precio del asiento" class="form-control" required>
+    
+                </div>
+                   
+       
+                           <button type="submit" class="btn btn-primary">Agregar precio </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

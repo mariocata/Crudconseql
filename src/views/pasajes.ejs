@@ -1,0 +1,90 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del pasaje</th>
+            <th>id del vuelo</th>
+            <th>Modificacion al precio base</th>
+            <th>Opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idpasaje %>
+                    </td>
+                    <td> <%= data[i].idvuelo %></td>
+                    <td> <%= data[i].modificacion %></td>
+                  
+                    
+                    <td>
+                        <a href="/pasajesdelete/<%= data[i].idpasaje %>/<%= data[i].idvuelo %>" class="btn btn-danger">Delete</a>
+                        <a href="/pasajesupdate/<%= data[i].idpasaje %>/<%= data[i].idvuelo %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/pasajesadd" method="post">
+
+                <div class="form-group">
+                    <input type="number" name="idpasaje" placeholder="id del pasaje" class="form-control" required>
+    
+                </div>
+
+                   <div class="form-group">
+                       <input type="number" name="idvuelo" placeholder="id del vuelo" class="form-control" required>
+       
+                   </div>
+                   <div class="form-group">
+                    <input type="number" name="modificacion" placeholder="el precio base se modifica?" class="form-control" required>
+    
+                </div>
+                   
+       
+                           <button type="submit" class="btn btn-primary">Agregar pasaje </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

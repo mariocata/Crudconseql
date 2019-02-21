@@ -1,0 +1,98 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del vuelo</th>
+         
+            <th>id de la ruta</th>
+            <th>id del avion</th>
+        
+            <th>fecha</th>
+            <th>id de ruta en caso de desvio</th>
+            <th>opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idvuelo %>
+                    </td>
+                    <td> <%= data[i].idruta %></td>
+                    <td> <%= data[i].idavion %></td>
+
+                    <td> <%= data[i].fecha %></td>
+                    <td> <%= data[i].idruta_desvio %></td>
+                    <td>
+                        <a href="/vuelosdelete/<%= data[i].idvuelo %>" class="btn btn-danger">Delete</a>
+                        <a href="/vuelosupdate/<%= data[i].idvuelo %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/vuelosadd" method="post">
+                   
+                   <div class="form-group">
+                           <input type="number" name="idruta" placeholder="id de ruta" class="form-control" required>
+           
+                       </div>
+                       <div class="form-group">
+                               <input type="number" name="idavion" placeholder="id de avion" class="form-control" required>
+               
+                           </div>
+                         
+                           <div class="form-group">
+                            <input type="date" name="fecha" placeholder="fecha" class="form-control" required>
+            
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="idruta_desvio" placeholder="ruta en caso de desvio" class="form-control" >
+            
+                        </div>
+       
+                           <button type="submit" class="btn btn-primary">Agregar Vuelo </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

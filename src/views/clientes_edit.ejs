@@ -1,0 +1,38 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/clientesupdate/<%= data.idpersona %>" method="post">
+                      
+                        <div class="form-group">
+                                <input type="text" name="nombre" placeholder="Nombre del cliente" class="form-control" required>
+                
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" name="nacionalidad" placeholder="nacionalidad del cliente" class="form-control" required>
+                    
+                                </div>
+                                <div class="form-group">
+                                 <input type="text" name="genero" placeholder="genero del cliente" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="comprador" placeholder="El cliente es comprador?" class="form-control" required>
+                 
+                             </div>
+            
+                        
+                                <button type="submit" class="btn btn-primary">editar cliente </button>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/_footer %>
