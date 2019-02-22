@@ -1,19 +1,22 @@
 const Sequelize = require('sequelize');
 const datab = require('../database/database');
 
-const asiento = datab.define("asiento", {
+const rutas = datab.define("rutas", {
    
-      idasiento: {
+      idruta: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
       },
-      tipo_de_asiento : {
+      IATA_origen : {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      IATA_destino: {
         type: Sequelize.STRING,
         allowNull: false
       }
-   
   });
 
-module.exports = asiento;
+  module.exports = rutas;

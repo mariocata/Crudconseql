@@ -18,17 +18,19 @@ controller.list = (req, res) => {
 };
 controller.save = (req, res) => {
     const data = req.body;
-    
+    console.log(data);
 
     let { idruta,idavion,fecha,idruta_desvio } = data;
-
+    if(idruta_desvio == ""){
+        idruta_desvio = null;
+    }
 
     vuelo.create({
     
         idruta,
         idavion,
         fecha,
-        idruta_desvio 
+        idruta_desvio
     })
     .then(vuelos => res.redirect('/vuelos'))
     .catch(err => console.log(err));

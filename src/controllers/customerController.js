@@ -1,5 +1,4 @@
 const controller = {};
-const user = require('../models/user')
 const datab = require('../database/database');
 
 
