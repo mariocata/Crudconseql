@@ -9,6 +9,7 @@ const vuelosController = require('../controllers/vuelosController');
 const preciosController = require('../controllers/preciosController');
 const clientesController = require('../controllers/clientesController');
 const rutasController = require('../controllers/rutasController');
+const avionesController = require('../controllers/avionesController');
 
 router.get('/', customerController.list);
 //router.post('/add',customerController.save);
@@ -57,5 +58,11 @@ router.post('/rutasadd',rutasController.save);
 router.get('/rutasupdate/:idruta', rutasController.edit);
 router.post('/rutasupdate/:idruta', rutasController.update);
 router.get('/rutasdelete/:idruta', rutasController.delete);
+
+router.get('/aviones',avionesController.list);
+router.post('/avionesadd',avionesController.save);
+router.get('/avionesdelete/:idavion', avionesController.delete);
+router.get('/avionesupdate/:idavion', avionesController.edit);
+router.post('/avionesupdate/:idavion', avionesController.update);
 
 module.exports = router;

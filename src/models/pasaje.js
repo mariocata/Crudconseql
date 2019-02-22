@@ -15,7 +15,7 @@ const pasaje = datab.define("pasaje", {
         primaryKey: true
       },
     modificacion:{
-      type: Sequelize.TINYINT,
+      type: Sequelize.INTEGER,
       allowNull: false
 
 

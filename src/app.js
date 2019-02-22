@@ -12,7 +12,7 @@ const datab = require('./database/database')
 datab.authenticate()
     .then(()=> console.log('Database CONNECTED '))
     .catch(err => console.log('ERROR' + err))
-datab.sync({ force: false })
+datab.sync({ force: true })
     .then(() => {
       console.log(`Database & tables created!`)
     })

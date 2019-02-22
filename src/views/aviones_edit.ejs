@@ -1,0 +1,108 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/avionesupdate/<%= data.idavion %>" method="post">
+                        
+                        <div class="form-group">
+                                <input type="text" name="fabricante" placeholder="fabricante del avion" class="form-control" required>
+                
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" name="modelo" placeholder="modelo del avion" class="form-control" required>
+                    
+                                </div>
+                                <div class="form-group">
+                                 <input type="number" name="vel_max" placeholder="velocidad maxima" class="form-control" required>
+                 
+                             </div>
+     
+     
+     
+                             <div class="form-group">
+                                 <input type="number" name="vel_crucero" placeholder="velocidad crucero" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="cant_asi_eco" placeholder="cantidad de asientos economicos" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="cant_asi_pri" placeholder="cantidad de asientos primera clase" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="peso_vacio" placeholder="peso vacio" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="peso_max" placeholder="peso maximo" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="carga_max_equip" placeholder="carga maxima de equipaje" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="carga_max_cabina" placeholder="carga maxima de cabina" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="pilotos_nece" placeholder="pilotos necesarios" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="text" name="tipo_combus" placeholder="tipo de combustible" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="cant_combus" placeholder="cantidad de combustible" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="cant_banos" placeholder="cantidad de banos" class="form-control" required>
+                 
+                             </div><div class="form-group">
+                                 <input type="number" name="cant_salidas_emer" placeholder="cantidad de salidas de emergencias" class="form-control" required>
+                 
+                             </div><div class="form-group">
+                                 <input type="text" name="equip_medi" placeholder="equipo medico disponible" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="dist_depegue_crgmax" placeholder="distancia de despegue con carga maxima" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="text" name="estado" placeholder="estado del avion" class="form-control" required>
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="id_mantenimiento" placeholder="id del mantenimiento" class="form-control" >
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="precio_dist_recorrida" placeholder="precio por distnacia recorrida" class="form-control" >
+                 
+                             </div>
+                             <div class="form-group">
+                                 <input type="number" name="idproveedor" placeholder="id del proveedor" class="form-control" >
+                 
+                             </div>
+     
+                        
+            
+                                <button type="submit" class="btn btn-primary">editar avion </button>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/_footer %>
