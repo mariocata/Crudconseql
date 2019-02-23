@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const datab = require('../database/database');
+const vuelo = require('../models/vuelo');
 
 const pasaje = datab.define("pasaje", {
    
@@ -8,11 +9,17 @@ const pasaje = datab.define("pasaje", {
         primaryKey: true,
         allowNull: false,
         
+        
       },
       idvuelo : {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        references:{
+          model:vuelo,
+          key:'idvuelo',
+          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        }
       },
     modificacion:{
       type: Sequelize.INTEGER,

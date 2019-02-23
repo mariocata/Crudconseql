@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
 const datab = require('../database/database');
+const proveedores = require('../models/proveedor');
+const mantenimiento = require('../models/mantenimiento');
 
 const aviones = datab.define("aviones", {
    
@@ -83,7 +85,12 @@ const aviones = datab.define("aviones", {
     },
     id_mantenimiento: {
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        references:{
+          model:mantenimiento,
+          key:'idmantenimiento',
+          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        }
       },
     precio_dist_recorrida: {
       type: Sequelize.INTEGER,
@@ -91,7 +98,12 @@ const aviones = datab.define("aviones", {
     },
     idproveedor:{
         type: Sequelize.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references:{
+        model:proveedores,
+        key:'idproveedor',
+        deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+      }
     }
 });
 

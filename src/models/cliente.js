@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const datab = require('../database/database');
+const comprador = require('../models/comprador');
 
 const cliente = datab.define("cliente", {
     idpersona: {
@@ -7,7 +8,12 @@ const cliente = datab.define("cliente", {
         
         primaryKey: true,
         allowNull: false,
-        autoIncrement: true
+        autoIncrement: true,
+        references:{
+          model:comprador,
+          key:'idcomprador',
+          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        }
       },
       nombre: {
         type: Sequelize.STRING,

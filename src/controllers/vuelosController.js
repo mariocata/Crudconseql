@@ -20,7 +20,7 @@ controller.save = (req, res) => {
     const data = req.body;
     console.log(data);
 
-    let { idruta,idavion,fecha,idruta_desvio } = data;
+    let { idruta,idavion,fecha,asientos_necesarios,idruta_desvio } = data;
     if(idruta_desvio == ""){
         idruta_desvio = null;
     }
@@ -30,6 +30,7 @@ controller.save = (req, res) => {
         idruta,
         idavion,
         fecha,
+        asientos_necesarios,
         idruta_desvio
     })
     .then(vuelos => res.redirect('/vuelos'))
@@ -62,7 +63,7 @@ controller.edit  = (req, res) => {
 controller.update = (req, res) => {
     const { idvuelo }= req.params;
     vuelo.update(
-        {  idruta : req.body.idruta, idavion :req.body.idavion ,fecha:req.body.fecha, idruta_desvio:req.body.idruta_desvio },
+        {  idruta : req.body.idruta, idavion :req.body.idavion ,fecha:req.body.fecha,asientos_necesarios:req.body.asientos_necesarios,  idruta_desvio:req.body.idruta_desvio },
         { where: { idvuelo: [idvuelo] } }
       )
         .then(result =>

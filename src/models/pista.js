@@ -2,15 +2,15 @@ const Sequelize = require('sequelize');
 const datab = require('../database/database');
 const aereopuerto = require('../models/aereopuerto');
 
-const rutas = datab.define("rutas", {
+const pista = datab.define("pista", {
    
-      idruta: {
+      idpista: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
       },
-      IATA_origen : {
+      IATA_ubicacion : {
         type: Sequelize.STRING,
         allowNull: false,
         references:{
@@ -20,15 +20,10 @@ const rutas = datab.define("rutas", {
         }
 
       },
-      IATA_destino: {
-        type: Sequelize.STRING,
+      distancia: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
-          model:aereopuerto,
-          key:'IATA',
-          deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-        }
       }
   });
 
-  module.exports = rutas;
+  module.exports = pista;
