@@ -10,6 +10,9 @@ const preciosController = require('../controllers/preciosController');
 const clientesController = require('../controllers/clientesController');
 const rutasController = require('../controllers/rutasController');
 const avionesController = require('../controllers/avionesController');
+const proveedoresController = require('../controllers/proveedoresController');
+const mantenimientosController = require('../controllers/mantenimientosController');
+
 
 router.get('/', customerController.list);
 //router.post('/add',customerController.save);
@@ -64,5 +67,18 @@ router.post('/avionesadd',avionesController.save);
 router.get('/avionesdelete/:idavion', avionesController.delete);
 router.get('/avionesupdate/:idavion', avionesController.edit);
 router.post('/avionesupdate/:idavion', avionesController.update);
+
+router.get('/proveedores',proveedoresController.list);
+router.post('/proveedoresadd',proveedoresController.save);
+router.get('/proveedoresdelete/:idproveedor', proveedoresController.delete);
+router.get('/proveedoresupdate/:idproveedor', proveedoresController.edit);
+router.post('/proveedoresupdate/:idproveedor', proveedoresController.update);
+
+router.get('/mantenimientos',mantenimientosController.list);
+router.post('/mantenimientosadd',mantenimientosController.save);
+router.get('/mantenimientosdelete/:idmantenimiento', mantenimientosController.delete);
+router.get('/mantenimientosupdate/:idmantenimiento', mantenimientosController.edit);
+router.post('/mantenimientosupdate/:idmantenimiento', mantenimientosController.update);
+
 
 module.exports = router;

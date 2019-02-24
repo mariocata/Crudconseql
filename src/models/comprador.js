@@ -8,7 +8,7 @@ const compradores = datab.define("compradores", {
       type: Sequelize.INTEGER,
       primaryKey: true,
       allowNull: false,
-      autoIncrement: true
+     
     },
     telefono : {
       type: Sequelize.STRING,

@@ -5,16 +5,18 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <form action="/rutasupdate/<%= data.idvuelo %>" method="post">
+                    <form action="/mantenimientosupdate/<%= data.idmantenimiento %>" method="post">
                       
                         <div class="form-group">
-                            <input type="text" name="IATA_origen" placeholder="IATA origen" class="form-control" required>
+                            <input type="text" name="descripcion" placeholder="descripcion del mantenimiento" class="form-control" required>
             
                         </div>
+                      
                         <div class="form-group">
-                         <input type="text" name="IATA_destino" placeholder="IATA destino" class="form-control" required>
+                         <input type="number" name="duracion" placeholder="duracion del mantenimiento" class="form-control" required>
          
                      </div>
+                 
             
                                 <button type="submit" class="btn btn-primary">Editar Ruta </button>
                     </form>

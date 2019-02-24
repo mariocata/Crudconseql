@@ -1,0 +1,31 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/proveedoresupdate/<%= data.idproveedor %>" method="post">
+                      
+                        
+                       <div class="form-group">
+                               <input type="text" name="nombre_proveedor" placeholder="nombre del proveedor" class="form-control" required>
+               
+                           </div>
+                         
+                           <div class="form-group">
+                            <input type="number" name="tiempo_respuets" placeholder="tiempo de respuesta" class="form-control" required>
+            
+                        </div>
+            
+                                <button type="submit" class="btn btn-primary">Editar Proveedor </button>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/_footer %>

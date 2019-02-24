@@ -1,0 +1,87 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del provvedor</th>
+         
+            <th>nombre del proveedor</th>
+            <th>tiempo de respuesta</th>
+            <th>opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idproveedor %>
+                    </td>
+                    <td> <%= data[i].nombre_proveedor %></td>
+                    <td> <%= data[i].tiempo_respuets %></td>
+
+                    <td>
+                        <a href="/proveedoresdelete/<%= data[i].idproveedor %>" class="btn btn-danger">Delete</a>
+                        <a href="/proveedoresupdate/<%= data[i].idproveedor %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/proveedoresadd" method="post">
+                   
+                   
+                       <div class="form-group">
+                               <input type="text" name="nombre_proveedor" placeholder="nombre del proveedor" class="form-control" required>
+               
+                           </div>
+                         
+                           <div class="form-group">
+                            <input type="number" name="tiempo_respuets" placeholder="tiempo de respuesta" class="form-control" required>
+            
+                        </div>
+                    
+       
+                           <button type="submit" class="btn btn-primary">Agregar Proveedor </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>
