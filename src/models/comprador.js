@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const datab = require('../database/database');
+const cliente = require('../models/cliente');
 
 
 const compradores = datab.define("compradores", {
@@ -8,6 +9,11 @@ const compradores = datab.define("compradores", {
       type: Sequelize.INTEGER,
       primaryKey: true,
       allowNull: false,
+      references:{
+        model:cliente,
+        key:'idpersona',
+        deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+      }
      
     },
     telefono : {

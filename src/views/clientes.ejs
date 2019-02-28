@@ -15,7 +15,7 @@
             <th>Nombre</th>
             <th>Nacionalidad</th>
             <th>Genero</th>
-            <th>Comprador</th>
+           
             <th>Opciones</th>
 
 
@@ -36,7 +36,7 @@
                     <td> <%= data[i].nombre %></td>
                     <td> <%= data[i].nacionalidad %></td>
                     <td> <%= data[i].genero %></td>
-                    <td> <%= data[i].comprador %></td>
+                
                     <td>
                         <a href="/clientesdelete/<%= data[i].idpersona %>" class="btn btn-danger">Delete</a>
                         <a href="/clientesupdate/<%= data[i].idpersona %>" class="btn btn-info">Update</a>
@@ -67,10 +67,7 @@
                             <input type="text" name="genero" placeholder="genero del cliente" class="form-control" required>
             
                         </div>
-                        <div class="form-group">
-                            <input type="number" name="comprador" placeholder="El cliente es comprador?" class="form-control" required>
-            
-                        </div>
+                      
        
                            <button type="submit" class="btn btn-primary">Agregar Cliente </button>
                </form>

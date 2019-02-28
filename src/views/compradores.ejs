@@ -1,0 +1,88 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del comprador</th>
+            <th>numero de telefono</th>
+            <th>correo electronico</th>
+            <th>Opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idcomprador %>
+                    </td>
+                    <td> <%= data[i].telefono %></td>
+                    <td> <%= data[i].correo_electronico %></td>
+            
+                    <td>
+                        <a href="/compradoresdelete/<%= data[i].idcomprador %>" class="btn btn-danger">Delete</a>
+                        <a href="/compradoresupdate/<%= data[i].idcomprador %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/compradoresadd" method="post">
+                   
+                   <div class="form-group">
+                           <input type="number" name="idcomprador" placeholder="id del comprador" class="form-control" required>
+           
+                       </div>
+                       <div class="form-group">
+                               <input type="text" name="telefono" placeholder="telefono del cliente" class="form-control" required>
+               
+                           </div>
+                           <div class="form-group">
+                            <input type="text" name="correo_electronico" placeholder="correo del cliente" class="form-control" required>
+            
+                        </div>
+                        
+       
+                           <button type="submit" class="btn btn-primary">Agregar Comprador </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

@@ -1,0 +1,84 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del avion</th>
+            <th>id de la ruta</th>
+            <th>Opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idavion %>
+                    </td>
+                    <td> <%= data[i].idruta %></td>
+                    
+            
+                    <td>
+                        <a href="/avion_rutasdelete/<%= data[i].idavion %>/<%= data[i].idruta %>" class="btn btn-danger">Delete</a>
+                        <a href="/avion_rutasupdate/<%= data[i].idavion %>/<%= data[i].idruta %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="/avion_rutasadd" method="post">
+                   
+                   <div class="form-group">
+                           <input type="number" name="idavion" placeholder="id del comprador" class="form-control" required>
+           
+                       </div>
+                       <div class="form-group">
+                               <input type="number" name="idruta" placeholder="telefono del cliente" class="form-control" required>
+               
+                           </div>
+                          
+                        
+       
+                           <button type="submit" class="btn btn-primary">Agregar Ruta de Avion </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

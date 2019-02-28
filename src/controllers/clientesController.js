@@ -20,7 +20,7 @@ controller.save = (req, res) => {
     const data = req.body;
     
 
-    let { nombre,nacionalidad,genero,comprador } = data;
+    let { nombre,nacionalidad,genero } = data;
 
 
     cliente.create({
@@ -28,8 +28,7 @@ controller.save = (req, res) => {
          
         nombre,
         nacionalidad,
-        genero,
-        comprador
+        genero
         
     })
     .then(clientes => res.redirect('/clientes'))
@@ -62,7 +61,7 @@ controller.edit  = (req, res) => {
 controller.update = (req, res) => {
     const { idpersona }= req.params;
     cliente.update(
-        { nombre:req.body.nombre,nacionalidad:req.body.nacionalidad,genero:req.body.genero,comprador:req.body.comprador },
+        { nombre:req.body.nombre,nacionalidad:req.body.nacionalidad,genero:req.body.genero },
         { where: { idpersona: [idpersona] } }
       )
         .then(result =>

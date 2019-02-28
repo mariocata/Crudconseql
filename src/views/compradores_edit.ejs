@@ -1,0 +1,34 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/compradoresupdate/<%= data.idcomprador %>" method="post">
+                      
+                        <div class="form-group">
+                            <input type="number" name="idcomprador" placeholder="id del comprador" class="form-control" required>
+            
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="telefono" placeholder="telefono del cliente" class="form-control" required>
+                
+                            </div>
+                            <div class="form-group">
+                             <input type="text" name="correo_electronico" placeholder="correo del cliente" class="form-control" required>
+             
+                         </div>
+            
+                        
+                                <button type="submit" class="btn btn-primary">Editar Comprador </button>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/_footer %>
