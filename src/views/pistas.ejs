@@ -1,0 +1,85 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id de la pista</th>
+            <th>Aereopuerto</th>
+            <th>Distancia</th>
+            <th>Opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idpista %>
+                    </td>
+                    <td> <%= data[i].IATA_ubicacion %></td>
+                    <td> <%= data[i].distancia %></td>
+            
+                    <td>
+                        <a href="/pistasdelete/<%= data[i].idpista %>" class="btn btn-danger">Delete</a>
+                        <a href="/pistasupdate/<%= data[i].idpista %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="pistasadd" method="post">
+                   
+                   <div class="form-group">
+                           <input type="text" name="IATA_ubicacion" placeholder="Aereopuerto" class="form-control" required>
+           
+                       </div>
+                       <div class="form-group">
+                               <input type="number" name="distancia" placeholder="Distancia" class="form-control" required>
+               
+                           </div>
+                          
+                        
+       
+                           <button type="submit" class="btn btn-primary">Agregar Pista </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

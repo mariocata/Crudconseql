@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const datab = require('../database/database');
 const aereopuerto = require('../models/aereopuerto');
 
-const pista = datab.define("pista", {
+const pistas = datab.define("pistas", {
    
       idpista: {
         type: Sequelize.INTEGER,
@@ -26,4 +26,4 @@ const pista = datab.define("pista", {
       }
   });
 
-  module.exports = pista;
+  module.exports = pistas;

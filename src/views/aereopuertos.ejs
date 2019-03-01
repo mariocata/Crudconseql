@@ -1,0 +1,88 @@
+<% include partials/_header %>
+
+<div class="container">
+
+    <div class="row mt-6">
+        <div class="col-md-7">
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>codigo IATA</th>
+            <th>Pais</th>
+            <th>Ciudad</th>
+            <th>Opciones</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].IATA %>
+                    </td>
+                    <td> <%= data[i].Pais %></td>
+                    <td> <%= data[i].Ciudad %></td>
+            
+                    <td>
+                        <a href="/aereopuertosdelete/<%= data[i].IATA %>" class="btn btn-danger">Delete</a>
+                        <a href="/aereopuertosupdate/<%= data[i].IATA %>" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+</div>
+<div class="col-md-5">
+    <div class="card">
+        <div class="card-body">
+               <form action="aereopuertosadd" method="post">
+                   
+                   <div class="form-group">
+                           <input type="text" name="IATA" placeholder="Aereopuerto" class="form-control" required>
+           
+                       </div>
+                       <div class="form-group">
+                               <input type="text" name="Pais" placeholder="Pais" class="form-control" required>
+               
+                           </div>
+                           <div class="form-group">
+                            <input type="text" name="Ciudad" placeholder="Ciudad" class="form-control" required>
+            
+                        </div>
+                        
+       
+                           <button type="submit" class="btn btn-primary">Agregar Aereopuerto </button>
+               </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<% include partials/_footer %>

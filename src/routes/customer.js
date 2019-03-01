@@ -14,6 +14,8 @@ const proveedoresController = require('../controllers/proveedoresController');
 const mantenimientosController = require('../controllers/mantenimientosController');
 const compradoresController = require('../controllers/compradoresController');
 const avion_rutasController = require('../controllers/avion_rutasController');
+const pistasController = require('../controllers/pistasController');
+const aereopuertosController = require('../controllers/aereopuertosController');
 
 router.get('/', customerController.list);
 //router.post('/add',customerController.save);
@@ -92,5 +94,18 @@ router.post('/avion_rutasadd',avion_rutasController.save);
 router.get('/avion_rutasdelete/:idavion/:idruta', avion_rutasController.delete);
 router.get('/avion_rutasupdate/:idavion/:idruta', avion_rutasController.edit);
 router.post('/avion_rutasupdate/:idavion/:idruta', avion_rutasController.update);
+
+router.get('/pistas',pistasController.list);
+router.post('/pistasadd',pistasController.save);
+router.get('/pistasdelete/:idpista', pistasController.delete);
+router.get('/pistasupdate/:idpista', pistasController.edit);
+router.post('/pistasupdate/:idpista', pistasController.update);
+
+router.get('/aereopuertos',aereopuertosController.list);
+router.post('/aereopuertosadd',aereopuertosController.save);
+router.get('/aereopuertosdelete/:IATA', aereopuertosController.delete);
+router.get('/aereopuertosupdate/:IATA', aereopuertosController.edit);
+router.post('/aereopuertosupdate/:IATA', aereopuertosController.update);
+
 
 module.exports = router;
