@@ -162,10 +162,18 @@
                             <input type="number" name="dist_depegue_crgmax" placeholder="distancia de despegue con carga maxima" class="form-control" required>
             
                         </div>
+                        
                         <div class="form-group">
-                            <input type="text" name="estado" placeholder="estado del avion" class="form-control" required>
-            
+                            <label for="sel1">Estado:</label>
+                            <select class="form-control" id="sel1" name="estado">
+                              <option></option>
+                              <option>En Vuelo</option>
+                              <option>En Reparacion</option>
+                              <option>Danado</option>
+                              <option>En Espera</option>
+                            </select>
                         </div>
+
                         <div class="form-group">
                             <input type="number" name="id_mantenimiento" placeholder="id del mantenimiento" class="form-control" >
             

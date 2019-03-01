@@ -22,7 +22,21 @@ controller.save = (req, res) => {
 
     let { fabricante,modelo,vel_max,vel_crucero,cant_asi_eco,cant_asi_pri,peso_vacio,peso_max,carga_max_equip,carga_max_cabina,pilotos_nece,
         tipo_combus,cant_combus,cant_banos,cant_salidas_emer,equip_medi,dist_depegue_crgmax,estado,id_mantenimiento,precio_dist_recorrida, idproveedor } = data;
-
+        
+        
+        
+        if(precio_dist_recorrida == ""){
+            precio_dist_recorrida = null;
+        }
+        if(idproveedor == ""){
+            idproveedor = null;
+        }
+        if(id_mantenimiento == ""){
+            id_mantenimiento = null;
+        }
+        if(estado==""){
+            estado= null;
+        }
 
     avion.create({
         fabricante,modelo,vel_max,vel_crucero,cant_asi_eco,cant_asi_pri,peso_vacio,peso_max,carga_max_equip,carga_max_cabina,pilotos_nece,

@@ -81,7 +81,8 @@ const aviones = datab.define("aviones", {
     },
     estado: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true,
+      //defaultValue: true
     },
     id_mantenimiento: {
         type: Sequelize.INTEGER,
