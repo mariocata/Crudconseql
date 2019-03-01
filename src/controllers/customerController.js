@@ -2,10 +2,51 @@ const controller = {};
 const datab = require('../database/database');
 
 
+
+const avion = require('../models/avion')
+
+
+
 controller.list = (req, res) => {
+    req.getConnection((err, conn) => {
+        conn.query('SELECT COUNT(idavion) as n  FROM aviones where idproveedor is not null', (err, numero) => {
+                if(err){
+                    res.json(err);
+                }
+               
+                res.render('customers', {
+                    data: numero
+                });
+        });
+    });
+};
+
+controller.list1 = (req, res) => {
+    const { IATA_ubicacion }= req.params;
+    req.getConnection((err, conn) => {
+        conn.query('SELECT *  FROM pistas where IATA_ubicacion = ? ',[IATA_ubicacion], (err, pista) => {
+                if(err){
+                    res.json(err);
+                }
+               
+                res.render('customers', {
+                    data: pista
+                });
+        });
+    });
+};
+
+
+
+
+/*controller.list = (req, res) => {
                 res.render('customers')
         
 };
+
+
+
+
 /*
 controller.save = (req, res) => {
     const data = req.body;

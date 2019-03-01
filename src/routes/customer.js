@@ -18,6 +18,10 @@ const pistasController = require('../controllers/pistasController');
 const aereopuertosController = require('../controllers/aereopuertosController');
 
 router.get('/', customerController.list);
+router.get('/buscarpista/:IATA_ubicacion', customerController.list1);
+
+
+
 //router.post('/add',customerController.save);
 //router.get('/delete/:id', customerController.delete);
 //router.get('/update/:id', customerController.edit);
