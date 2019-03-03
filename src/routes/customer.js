@@ -16,11 +16,14 @@ const compradoresController = require('../controllers/compradoresController');
 const avion_rutasController = require('../controllers/avion_rutasController');
 const pistasController = require('../controllers/pistasController');
 const aereopuertosController = require('../controllers/aereopuertosController');
+const masvistadosController  = require('../controllers/masvistadosController');
+const avionesalquiladosController  = require('../controllers/avionesalquiladosController');
 
+//querys
 router.get('/', customerController.list);
-router.get('/buscarpista/:IATA_ubicacion', customerController.list1);
-
-
+//router.get('/buscarpista/:IATA_ubicacion', customerController.list1);
+router.get('/destinosmasvisitados', masvistadosController.list);
+router.get('/avionesalquilados', avionesalquiladosController.list);
 
 //router.post('/add',customerController.save);
 //router.get('/delete/:id', customerController.delete);

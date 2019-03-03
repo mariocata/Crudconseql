@@ -56,7 +56,7 @@ controller.edit  = (req, res) => {
 };
 controller.update = (req, res) => {
     const { IATA }= req.params;
-    pista.update(
+    aereopuerto.update(
         { IATA:req.body.IATA, Pais:req.body.Pais, Ciudad:req.body.Ciudad },
         { where: { IATA: [IATA] } }
       )

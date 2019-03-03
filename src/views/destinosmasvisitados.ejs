@@ -1,0 +1,41 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>IATA</th>
+            <th>pasajeros</th>
+            
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].destino %>
+                    </td>
+                    <td>
+                        <%= data[i].pasajeros %>
+                    </td>
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

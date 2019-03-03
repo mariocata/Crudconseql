@@ -6,21 +6,22 @@ const datab = require('../database/database');
 const avion = require('../models/avion')
 
 
+const vuelo = require('../models/vuelo')
+
+
+const ruta = require('../models/ruta')
+
 
 controller.list = (req, res) => {
-    req.getConnection((err, conn) => {
-        conn.query('SELECT COUNT(idavion) as n  FROM aviones where idproveedor is not null', (err, numero) => {
-                if(err){
-                    res.json(err);
-                }
+    
                
                 res.render('customers', {
-                    data: numero
+              
                 });
-        });
-    });
-};
+        };
+   
 
+/*
 controller.list1 = (req, res) => {
     const { IATA_ubicacion }= req.params;
     req.getConnection((err, conn) => {
@@ -34,7 +35,8 @@ controller.list1 = (req, res) => {
                 });
         });
     });
-};
+};*/
+
 
 
 

@@ -62,7 +62,11 @@ controller.edit  = (req, res) => {
 };
 controller.update = (req, res) => {
     const { idvuelo }= req.params;
+    if(req.body.idruta_desvio == ""){
+        req.body.idruta_desvio = null;
+    }
     vuelo.update(
+        
         {  idruta : req.body.idruta, idavion :req.body.idavion ,fecha:req.body.fecha,asientos_necesarios:req.body.asientos_necesarios,  idruta_desvio:req.body.idruta_desvio },
         { where: { idvuelo: [idvuelo] } }
       )

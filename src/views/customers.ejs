@@ -1,55 +1,19 @@
 <% include partials/_header %>
 
-<h4>Numero de Aviones alquilados: <%= data[0].n %></h4>
 
 
 
 
-<form action="/buscarpista/<%= data.IATA_ubicacion %>" method="GET"  >
-                   
-    <div class="form-group">
-            <input type="text" name="IATA_ubicacion" placeholder="Pista de aeropueto IATA" class="form-control" required>
-
-        </div>
-         
-
-            <button type="submit" class="btn btn-primary">Buscar Pistas  </button>
-</form>
 
 
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>id de la pista</th>
-            <th>Aereopuerto</th>
-            <th>Distancia</th>
-            
+<br>
+<br>
+<br>
+<a href="/avionesalquilados" class="btn btn-info">Numero De Aviones Alquilados</a>
+<br>
+<br>
+<br>
 
-
-        </tr>
-
-
-    </thead>
-
-
-    <tbody>
-
-        <% if (data) { %>
-        <% for (var i =0 ; i< data.length; i++) { %>
-                <tr>
-                    <td>
-                        <%= data[i].idpista %>
-                    </td>
-                    <td> <%= data[i].IATA_ubicacion %></td>
-                    <td> <%= data[i].distancia %></td>
-            
-                </tr>
-
-
-            <% } %>   
-        <% } %>
-
-    </tbody>
-</table>
+<a href="/destinosmasvisitados" class="btn btn-info">Destinos Mas Visitados</a>
 
 <% include partials/_footer %>
