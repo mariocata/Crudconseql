@@ -18,12 +18,24 @@ const pistasController = require('../controllers/pistasController');
 const aereopuertosController = require('../controllers/aereopuertosController');
 const masvistadosController  = require('../controllers/masvistadosController');
 const avionesalquiladosController  = require('../controllers/avionesalquiladosController');
+const pasajerosabordadosController = require('../controllers/pasajerosabordadosController');
+const pistasaeropuertosController = require('../controllers/pistasaeropuertosController');
+const ubicacionavionesController = require('../controllers/ubicacionavionesController');
+const alquiladospreciodistController = require('../controllers/alquiladospreciodistController');
+const compradorclienteController = require('../controllers/compradorclienteController');
+const pasajeclienteController = require('../controllers/pasajeclienteController');
 
 //querys
 router.get('/', customerController.list);
 //router.get('/buscarpista/:IATA_ubicacion', customerController.list1);
 router.get('/destinosmasvisitados', masvistadosController.list);
 router.get('/avionesalquilados', avionesalquiladosController.list);
+router.get('/pasajeroabordado', pasajerosabordadosController.list);
+router.get('/pistaaeropuerto', pistasaeropuertosController.list);
+router.get('/bitacoradevuelo', ubicacionavionesController.list);
+router.get('/alquiladoprecio', alquiladospreciodistController.list);
+router.get('/compclien', compradorclienteController.list);
+router.get('/pasclien', pasajeclienteController.list);
 
 //router.post('/add',customerController.save);
 //router.get('/delete/:id', customerController.delete);

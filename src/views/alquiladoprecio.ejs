@@ -1,0 +1,50 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id_avion</th>
+            <th>nombre proveedor</th>
+            <th>precio por distancia</th>
+            <th>tiempo de respuesta</th>
+            
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].ida %>
+                    </td>
+                    <td>
+                        <%= data[i].nombre %>
+                    </td>
+                    <td>
+                        <%= data[i].precio %>
+                    </td>
+                    <td>
+                        <%= data[i].tiempo %>
+                    </td>
+
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

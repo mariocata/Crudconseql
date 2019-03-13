@@ -1,0 +1,68 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id_pasaje</th>
+            <th>id_cliente</th>
+            <th>nombre pasajero</th>
+            <th>genero pasajero</th>
+            <th>cantidad de equipaje</th>
+            <th>tipo de asiento</th>
+            <th>id_vuelo</th>
+            <th>IATA_origen</th>
+            <th>IATA_destino</th>
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idp %>
+                    </td>
+                    <td>
+                        <%= data[i].idc %>
+                    </td>
+                    <td>
+                        <%= data[i].nom %>
+                    </td>
+                    <td>
+                        <%= data[i].gen %>
+                    </td>
+                    <td>
+                        <%= data[i].equi %>
+                    </td>
+                    <td>
+                        <%= data[i].asien %>
+                    </td>
+                    <td>
+                        <%= data[i].vuel %>
+                    </td>
+                    <td>
+                        <%= data[i].ori %>
+                    </td>
+                    <td>
+                        <%= data[i].dest %>
+                    </td>
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

@@ -1,0 +1,53 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id_avion</th>
+            <th>id_vuelo</th>
+            <th>id_ruta</th>
+            <th>IATA_origen</th>
+            <th>IATA_destino</th>
+            
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].ida %>
+                    </td>
+                    <td>
+                        <%= data[i].idv %>
+                    </td>
+                    <td>
+                        <%= data[i].idr %>
+                    </td>
+                    <td>
+                        <%= data[i].IATAO %>
+                    </td>
+                    <td>
+                        <%= data[i].IATAD %>
+                    </td>
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

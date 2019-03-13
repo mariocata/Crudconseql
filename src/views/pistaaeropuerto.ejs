@@ -1,0 +1,46 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>IATA Aeropuerto</th>
+            <th>Distacia pista</th>
+            <th>Pais</th>
+            <th>Ciudad</th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].IATA %>
+                    </td>
+                    <td>
+                        <%= data[i].dist %>
+                    </td>
+                    <td>
+                        <%= data[i].Pais %>
+                    </td>
+                    <td>
+                        <%= data[i].Ciudad %>
+                    </td>
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

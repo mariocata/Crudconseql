@@ -1,0 +1,56 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>nacionalidad</th>
+            <th>genero</th>
+            <th>numero de telefono</th>
+            <th>correo electronico</th>
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idc %>
+                    </td>
+                    <td>
+                        <%= data[i].nom %>
+                    </td>
+                    <td>
+                        <%= data[i].nac %>
+                    </td>
+                    <td>
+                        <%= data[i].gen %>
+                    </td>
+                    <td>
+                        <%= data[i].tel %>
+                    </td>
+                    <td>
+                        <%= data[i].correo %>
+                    </td>
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>
