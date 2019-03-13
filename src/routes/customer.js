@@ -24,7 +24,7 @@ const ubicacionavionesController = require('../controllers/ubicacionavionesContr
 const alquiladospreciodistController = require('../controllers/alquiladospreciodistController');
 const compradorclienteController = require('../controllers/compradorclienteController');
 const pasajeclienteController = require('../controllers/pasajeclienteController');
-
+const ingresovueloController = require('../controllers/ingresovueloController');
 //querys
 router.get('/', customerController.list);
 //router.get('/buscarpista/:IATA_ubicacion', customerController.list1);
@@ -36,6 +36,9 @@ router.get('/bitacoradevuelo', ubicacionavionesController.list);
 router.get('/alquiladoprecio', alquiladospreciodistController.list);
 router.get('/compclien', compradorclienteController.list);
 router.get('/pasclien', pasajeclienteController.list);
+router.get('/ingresoporvuelo', ingresovueloController.list);
+
+
 
 //router.post('/add',customerController.save);
 //router.get('/delete/:id', customerController.delete);
