@@ -1,0 +1,39 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th> Porcentaje total de vuelos afectados por sobreventa</th>
+            
+            
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].porcentaje %> <p>%</p>
+                    </td>
+                   
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

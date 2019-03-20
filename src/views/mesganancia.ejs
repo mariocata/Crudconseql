@@ -1,0 +1,41 @@
+<% include partials/_header %>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Ingreso por Ventas</th>
+            <th>Mes del Año</th>
+            
+            
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].venta %>
+                    </td>
+                    <td>
+                        <%= data[i].mes %>
+                    </td>
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+<% include partials/_footer %>

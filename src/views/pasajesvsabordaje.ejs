@@ -1,0 +1,46 @@
+<% include partials/_header %>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del vuelo</th>
+            <th>personas a abordar</th>
+            <th>pasajes vendidos</th>
+      
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idv %>
+                    </td>
+                    <td>
+                        <%= data[i].an %>
+                    </td>
+                    <td>
+                        <%= data[i].pav %>
+                    </td>
+                    
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+
+<% include partials/_footer %>

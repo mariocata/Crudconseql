@@ -1,0 +1,48 @@
+<% include partials/_header %>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>id del vuelo</th>
+            <th>id del avion</th>
+            <th>total de asientos del avion</th>
+            <th>Numero de Personas que se presentaron a tomar el vuelo </th>
+
+
+        </tr>
+
+
+    </thead>
+
+
+    <tbody>
+
+        <% if (data) { %>
+        <% for (var i =0 ; i< data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].idv %>
+                    </td>
+                    <td>
+                        <%= data[i].ida %>
+                    </td>
+                    <td>
+                        <%= data[i].Total_Asientos %>
+                    </td>
+                    <td>
+                        <%= data[i].an %>
+                    </td>
+            
+                </tr>
+
+
+            <% } %>   
+        <% } %>
+
+    </tbody>
+</table>
+
+
+
+<% include partials/_footer %>

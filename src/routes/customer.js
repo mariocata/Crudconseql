@@ -25,6 +25,11 @@ const alquiladospreciodistController = require('../controllers/alquiladospreciod
 const compradorclienteController = require('../controllers/compradorclienteController');
 const pasajeclienteController = require('../controllers/pasajeclienteController');
 const ingresovueloController = require('../controllers/ingresovueloController');
+const vuelosafectadosController = require('../controllers/vuelosafectadosController');
+const pasajesvsabordajeController = require('../controllers/pasajesvsabordajeController');
+const mesgananciaController = require('../controllers/mesgananciaController');
+const porcentajetotalvaController = require('../controllers/porcentajetotalvaController');
+const masvisitadoporController = require('../controllers/masvisitadoporController');
 //querys
 router.get('/', customerController.list);
 //router.get('/buscarpista/:IATA_ubicacion', customerController.list1);
@@ -37,9 +42,11 @@ router.get('/alquiladoprecio', alquiladospreciodistController.list);
 router.get('/compclien', compradorclienteController.list);
 router.get('/pasclien', pasajeclienteController.list);
 router.get('/ingresoporvuelo', ingresovueloController.list);
-
-
-
+router.get('/vuelosafectados', vuelosafectadosController.list);
+router.get('/pasajesvsabordaje', pasajesvsabordajeController.list);
+router.get('/mesganancia', mesgananciaController.list);
+router.get('/porcentajetotalva', porcentajetotalvaController.list);
+router.get('/masvisitadopor', masvisitadoporController.list);
 //router.post('/add',customerController.save);
 //router.get('/delete/:id', customerController.delete);
 //router.get('/update/:id', customerController.edit);
